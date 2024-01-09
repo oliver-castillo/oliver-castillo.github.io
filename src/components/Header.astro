@@ -1,0 +1,34 @@
+---
+const links = [
+  {
+    href: "#",
+    name: "About",
+  },
+  {
+    href: "#experience",
+    name: "Experience",
+  },
+  {
+    href: "#projects",
+    name: "Projects",
+  },
+  {
+    href: "#skills",
+    name: "Skills",
+  },
+];
+---
+
+<header class="flex justify-center sticky top-4">
+  <nav
+    class="flex gap-x-4 px-4 py-2 rounded-full text-xl backdrop-blur bg-white/10"
+  >
+    {
+      links.map((link) => (
+        <a class="" href={link.href}>
+          {link.name}
+        </a>
+      ))
+    }
+  </nav>
+</header>

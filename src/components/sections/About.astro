@@ -1,0 +1,58 @@
+---
+import Badge from "../Badge.astro";
+import SocialPill from "../SocialPill.astro";
+import Envelope from "../icons/Envelope.astro";
+import GitHub from "../icons/GitHub.astro";
+import LinkedIn from "../icons/LinkedIn.astro";
+---
+
+<section class="py-60 mt-6 w-full md:w-[740px] mx-auto px-4" id="about">
+  <img
+    src="/public/images/avatar.jpg"
+    alt="avatar"
+    class="size-20 rounded-full bg-gradient-to-t from-blue-950 to-zinc-700 mb-2"
+  />
+  <span class="text-2xl">Hey there</span>
+  <div class="flex gap-x-2">
+    <h1
+      class="text-gray-900 dark:text-white
+    text-3xl md:text-4xl lg:text-5xl
+    font-bold"
+    >
+      I'm Oliver Castillo
+    </h1>
+    <Badge>Open to work</Badge>
+  </div>
+  <p class="text-xl md:text-2xl lg:text-3xl mb-4">
+    <span
+      class="bg-gradient-to-r from-yellow-400 to-white text-transparent bg-clip-text"
+      >+1 year of experience.</span
+    >
+    <span
+      class="bg-gradient-to-r from-cyan-400 to-purple-400 text-transparent bg-clip-text"
+      >Full-Stack developer.</span
+    >
+    <span
+      class="bg-gradient-to-r from-red-400 via-white to-red-400 text-transparent bg-clip-text"
+      >From Lima, Perú.</span
+    >
+    <span
+      class="bg-gradient-to-r from-white to-zinc-400 text-transparent bg-clip-text"
+      >Focused on solving problems by applying new tools and technologies.</span
+    >
+  </p>
+  <nav class="flex gap-x-3 text-xs md:text-base">
+    <SocialPill href="https://www.linkedin.com/in/oliver-castillot/">
+      <LinkedIn class="size-4 md:size-6" />
+      LinkedIn
+    </SocialPill>
+    <SocialPill href="https://github.com/oliver-castillo">
+      <GitHub class="size-4 md:size-6" />
+      GitHub
+    </SocialPill>
+    <SocialPill href="mailto:olcastillot@gmail.com">
+      <Envelope class="size-4 md:size-6" />
+      olcastillot@gmail.com
+    </SocialPill>
+  </nav>
+</section>

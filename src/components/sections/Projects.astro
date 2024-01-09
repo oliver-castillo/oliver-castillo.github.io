@@ -1,0 +1,142 @@
+---
+import Section from "../Section.astro";
+import Code from "../icons/Code.astro";
+import CodeIgniter from "../icons/CodeIgniter.astro";
+import PHP from "../icons/PHP.astro";
+import MySQL from "../icons/MySQL.astro";
+import JavaScript from "../icons/JavaScript.astro";
+import ChartJS from "../icons/ChartsJS.astro";
+import JQuery from "../icons/JQuery.astro";
+import Spring from "../icons/Spring.astro";
+import Java from "../icons/Java.astro";
+import Lock from "../icons/Lock.astro";
+import Pill from "../Pill.astro";
+const tags = {
+  CodeIgniter: {
+    name: "CodeIgniter",
+    class: "bg-yellow-400 text-black",
+    icon: CodeIgniter,
+  },
+  PHP: {
+    name: "PHP",
+    class: "bg-purple-400 text-black",
+    icon: PHP,
+  },
+  MySQL: {
+    name: "MySQL",
+    class: "bg-blue-200 text-black",
+    icon: MySQL,
+  },
+  JavaScript: {
+    name: "JavaScript",
+    class: "bg-gray-600 text-white",
+    icon: JavaScript,
+  },
+  ChartJS: {
+    name: "ChartJS",
+    class: "bg-cyan-800 text-white",
+    icon: ChartJS,
+  },
+  JQuery: {
+    name: "JQuery",
+    class: "bg-cyan-400 text-black",
+    icon: JQuery,
+  },
+  Spring: {
+    name: "Spring",
+    class: "bg-[#1B1E22] text-white",
+    icon: Spring,
+  },
+  Java: {
+    name: "Java",
+    class: "bg-white text-black",
+    icon: Java,
+  },
+  Bcrypt: {
+    name: "Bcrypt",
+    class: "bg-[#5B5B5A] text-black",
+    icon: Lock,
+  },
+  Scrypt: {
+    name: "Scrypt",
+    class: "bg-[#5B5B5A] text-black",
+    icon: Lock,
+  },
+  Argon2id: {
+    name: "Scrypt",
+    class: "bg-[#5B5B5A] text-black",
+    icon: Lock,
+  },
+  PBKDF2: {
+    name: "PBKDF2",
+    class: "bg-[#5B5B5A] text-black",
+    icon: Lock,
+  },
+};
+
+const projects = [
+  {
+    title: "Web Application",
+    description:
+      "Web application to display, store, edit and delete records. In addition, it allows the display of reports using charts.",
+    link: "https://ghiferdi.000webhostapp.com/",
+    github: "",
+    image: "/public/images/project-01.webp",
+    tags: [
+      tags.CodeIgniter,
+      tags.PHP,
+      tags.MySQL,
+      tags.JavaScript,
+      tags.ChartJS,
+      tags.JQuery,
+    ],
+  },
+  {
+    title: "Password Encryption API",
+    description:
+      "API (Application Programming Interface) to encrypt passwords using different algorithms developed with Java and Spring.",
+    link: "https://passwordencryption-production.up.railway.app/",
+    github: "",
+    image: "/public/images/project-02.webp",
+    tags: [
+      tags.Java,
+      tags.Spring,
+      tags.Argon2id,
+      tags.Bcrypt,
+      tags.PBKDF2,
+      tags.Scrypt,
+    ],
+  },
+];
+---
+
+<Section id="projects" title="Projects">
+  <Code slot="icon" class="size-6 my-auto" />
+  {
+    projects.map(({ title, description, link, tags, image }) => (
+      <article class="mb-8">
+        <h3 class="text-xl md:text-2xl text-amber-200">{title}</h3>
+        <p class="text-lg text-gray-300 mb-2">{description}</p>
+        <ul class="flex flex-wrap gap-x-2 mb-4">
+          {tags.map((tag) => (
+            <li>
+              <Pill classes={tag.class}>
+                <tag.icon class="size-4 my-auto" /> {tag.name}
+              </Pill>
+            </li>
+          ))}
+        </ul>
+        <a href={link} target="_blank" rel="noopener noreferrer">
+          <img
+            loading="lazy"
+            src={image}
+            alt="project-image"
+            class="rounded 
+            shadow-2xl shadow-white/10 aspect-video
+            transition hover:shadow-white/20 origin-top border-gray-700"
+          />
+        </a>
+      </article>
+    ))
+  }
+</Section>

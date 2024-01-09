@@ -1,0 +1,56 @@
+---
+import Section from "../Section.astro";
+import Skill from "../Skill.astro";
+import CodeIgniter from "../icons/CodeIgniter.astro";
+import Django from "../icons/Django.astro";
+import Gears from "../icons/Gears.astro";
+import HTML5 from "../icons/HTML5.astro";
+import JQuery from "../icons/JQuery.astro";
+import Java from "../icons/Java.astro";
+import JavaScript from "../icons/JavaScript.astro";
+import Laravel from "../icons/Laravel.astro";
+import MicrosoftSQLServer from "../icons/MicrosoftSQLServer.astro";
+import AstroIcon from "../icons/AstroIcon.astro";
+import MySQL from "../icons/MySQL.astro";
+import PHP from "../icons/PHP.astro";
+import PostgreSQL from "../icons/PostgreSQL.astro";
+import Python from "../icons/Python.astro";
+import SQL from "../icons/SQL.astro";
+import Spring from "../icons/Spring.astro";
+
+const skills = [
+  { name: "Java", icon: Java },
+  { name: "Spring", icon: Spring },
+  { name: "PHP", icon: PHP },
+  { name: "CodeIgniter", icon: CodeIgniter },
+  { name: "Laravel", icon: Laravel },
+  { name: "JavaScript", icon: JavaScript },
+  { name: "JQuery", icon: JQuery },
+  { name: "Python", icon: Python },
+  { name: "Django", icon: Django },
+  { name: "SQL", icon: SQL },
+  { name: "MySQL", icon: MySQL },
+  { name: "PostgreSQL", icon: PostgreSQL },
+  { name: "Microsoft SQL Server", icon: MicrosoftSQLServer },
+  { name: "Astro", icon: AstroIcon },
+  { name: "HTML5", icon: HTML5 },
+];
+---
+
+<Section id="skills" title="Skills">
+  <Gears slot="icon" class="size-6 my-auto" />
+  <article>
+    <ul class="flex flex-wrap gap-x-4">
+      {
+        skills.map((skill) => (
+          <li class="mb-4">
+            <Skill>
+              <skill.icon class="size-6 my-auto" />
+              <div class="my-auto">{skill.name}</div>
+            </Skill>
+          </li>
+        ))
+      }
+    </ul>
+  </article>
+</Section>

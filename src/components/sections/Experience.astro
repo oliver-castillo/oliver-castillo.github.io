@@ -1,0 +1,65 @@
+---
+import type { Code, Debug } from "astro:components";
+import Section from "../Section.astro";
+import Briefcase from "../icons/Briefcase.astro";
+const jobs = [
+  {
+    company: "Ghiferdi",
+    position: "Full Stack Developer",
+    date: "2022 - 2023",
+    description: [
+      "Development of a web application with Codeigniter, PHP and MySQL.",
+      "Interface design using Bootstrap and CSS.",
+      "Dynamic tables and graphs using JavaScript, JQuery and ChartJS.",
+      "Sample of reports related to vehicle expenses and technical failures.",
+    ],
+  },
+  {
+    company: "Stefanini IT Solutions",
+    position: "Analyst Developer",
+    date: "2022",
+    description: [
+      "Optimizing data manipulation using Mapper Helper using Java.",
+      "Repository management through Git to ensure an organized workflow.",
+      "Replication of internal and external APIs operation.",
+      "Analysis and conduct of SQL queries.",
+    ],
+  },
+  {
+    company: "Inveritas Global Holdings",
+    position: "Programmer Analyst",
+    date: "2021 - 2022",
+    description: [
+      "Creation and management of APX components such as DTOs and libraries using Java.",
+      "Project management through BitBucket and Git.",
+      "Testing of APIs using Postman.",
+    ],
+  },
+];
+---
+
+<Section id="experience" title="Experience">
+  <Briefcase slot="icon" class="size-6 my-auto" />
+  <div class="relative border-s border-gray-200 dark:border-gray-700">
+    {
+      jobs.map((job) => (
+        <article class="ms-4 mb-10">
+          <div class="absolute w-3 h-3 bg-gray-400 rounded-full mt-1.5 -start-1.5" />
+          <h3 class="text-xl md:text-2xl text-gray-200 dark:text-amber-200">
+            {job.company} - {job.position}
+          </h3>
+          <time class="mb-1 text-base font-normal leading-none text-gray-400 dark:text-gray-500">
+            {job.date}
+          </time>
+          <ul class="ms-1">
+            {job.description.map((description) => (
+              <li class="list-disc list-inside text-lg text-gray-300">
+                {description}
+              </li>
+            ))}
+          </ul>
+        </article>
+      ))
+    }
+  </div>
+</Section>
