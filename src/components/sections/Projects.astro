@@ -14,22 +14,22 @@ import Pill from "../Pill.astro";
 const tags = {
   CodeIgniter: {
     name: "CodeIgniter",
-    class: "bg-yellow-400 text-black",
+    class: "bg-[#FAB241] text-black",
     icon: CodeIgniter,
   },
   PHP: {
     name: "PHP",
-    class: "bg-purple-400 text-black",
+    class: "bg-[#818DCB] text-white",
     icon: PHP,
   },
   MySQL: {
     name: "MySQL",
-    class: "bg-blue-200 text-black",
+    class: "bg-[#3C91AE] text-white",
     icon: MySQL,
   },
   JavaScript: {
     name: "JavaScript",
-    class: "bg-gray-600 text-white",
+    class: "bg-black text-white",
     icon: JavaScript,
   },
   ChartJS: {
@@ -39,7 +39,7 @@ const tags = {
   },
   JQuery: {
     name: "JQuery",
-    class: "bg-cyan-400 text-black",
+    class: "bg-[#0E1B2B] text-white",
     icon: JQuery,
   },
   Spring: {
@@ -49,7 +49,7 @@ const tags = {
   },
   Java: {
     name: "Java",
-    class: "bg-white text-black",
+    class: "bg-[#1B1E22] text-white",
     icon: Java,
   },
   Bcrypt: {
@@ -117,7 +117,7 @@ const projects = [
       <article class="mb-8">
         <h3 class="text-xl md:text-2xl text-amber-200">{title}</h3>
         <p class="text-lg text-gray-300 mb-2">{description}</p>
-        <ul class="flex flex-wrap gap-x-2 mb-4">
+        <ul class="flex flex-wrap gap-x-2 mb-2">
           {tags.map((tag) => (
             <li>
               <Pill classes={tag.class}>
