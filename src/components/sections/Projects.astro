@@ -1,16 +1,16 @@
 ---
-import Section from "../Section.astro";
+import ChartJS from "../icons/ChartsJS.astro";
 import Code from "../icons/Code.astro";
 import CodeIgniter from "../icons/CodeIgniter.astro";
-import PHP from "../icons/PHP.astro";
-import MySQL from "../icons/MySQL.astro";
-import JavaScript from "../icons/JavaScript.astro";
-import ChartJS from "../icons/ChartsJS.astro";
-import JQuery from "../icons/JQuery.astro";
-import Spring from "../icons/Spring.astro";
 import Java from "../icons/Java.astro";
+import JavaScript from "../icons/JavaScript.astro";
+import JQuery from "../icons/JQuery.astro";
 import Lock from "../icons/Lock.astro";
+import MySQL from "../icons/MySQL.astro";
+import PHP from "../icons/PHP.astro";
+import Spring from "../icons/Spring.astro";
 import Pill from "../Pill.astro";
+import Section from "../Section.astro";
 
 const tags = {
   CodeIgniter: {
@@ -91,6 +91,7 @@ const projects = [
       tags.ChartJS,
       tags.JQuery,
     ],
+    isAvailable: true,
   },
   {
     title: "Password Encryption API",
@@ -107,6 +108,7 @@ const projects = [
       tags.PBKDF2,
       tags.Scrypt,
     ],
+    isAvailable: false,
   },
 ];
 ---
@@ -114,30 +116,32 @@ const projects = [
 <Section id="projects" title="Projects">
   <Code slot="icon" class="size-6 my-auto" />
   {
-    projects.map(({ title, description, link, tags, image }) => (
-      <article class="mb-8">
-        <h3 class="text-xl md:text-2xl text-amber-200">{title}</h3>
-        <p class="text-lg text-gray-300 mb-2">{description}</p>
-        <ul class="flex flex-wrap gap-x-2 mb-2">
-          {tags.map((tag) => (
-            <li>
-              <Pill classes={tag.class}>
-                <tag.icon class="size-4 my-auto" /> {tag.name}
-              </Pill>
-            </li>
-          ))}
-        </ul>
-        <a href={link} target="_blank" rel="noopener noreferrer">
-          <img
-            loading="lazy"
-            src={image}
-            alt="project-image"
-            class="rounded 
+    projects
+      .filter((project) => project.isAvailable)
+      .map(({ title, description, link, tags, image, isAvailable }) => (
+        <article class="mb-8">
+          <h3 class="text-xl md:text-2xl text-amber-200">{title}</h3>
+          <p class="text-lg text-gray-300 mb-2">{description}</p>
+          <ul class="flex flex-wrap gap-x-2 mb-2">
+            {tags.map((tag) => (
+              <li>
+                <Pill classes={tag.class}>
+                  <tag.icon class="size-4 my-auto" /> {tag.name}
+                </Pill>
+              </li>
+            ))}
+          </ul>
+          <a href={link} target="_blank" rel="noopener noreferrer">
+            <img
+              loading="lazy"
+              src={image}
+              alt="project-image"
+              class="rounded
             shadow-2xl shadow-white/10 aspect-video
             transition hover:shadow-white/20 origin-top border-gray-700"
-          />
-        </a>
-      </article>
-    ))
+            />
+          </a>
+        </article>
+      ))
   }
 </Section>
