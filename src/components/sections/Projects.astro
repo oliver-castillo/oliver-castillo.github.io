@@ -91,7 +91,7 @@ const projects = [
       tags.ChartJS,
       tags.JQuery,
     ],
-    isAvailable: true,
+    isAvailable: false,
   },
   {
     title: "Password Encryption API",
@@ -113,7 +113,7 @@ const projects = [
 ];
 ---
 
-<Section id="projects" title="Projects">
+<Section id="projects" title="Projects" hidden={true}>
   <Code slot="icon" class="size-6 my-auto" />
   {
     projects
