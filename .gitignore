@@ -19,3 +19,15 @@ pnpm-debug.log*
 
 # macOS-specific files
 .DS_Store
+
+# editor configurations
+.editorconfig
+
+# vscode
+.vscode
+
+# qodo
+.qodo
+
+# webstorm
+.idea
